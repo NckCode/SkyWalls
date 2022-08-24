@@ -49,7 +49,8 @@ const UserProfile = () => {
 
   const logout = () => {
     localStorage.clear();
-    navigate('/');
+    //localStorage.removeItem(user);
+    navigate('/login');
   }
 
   if(!user) {
@@ -70,7 +71,7 @@ const UserProfile = () => {
               <button 
               type='button'
               className='bg-white p-2 rounded-full cursor-pointer outline-none shadow-md'
-              onClick={(e) => e.googleLogout(logout)}
+              onClick={(e) => {googleLogout(); logout();}}
               >
                 <AiOutlineLogout color='red' fontSize={21}/>
               </button>
